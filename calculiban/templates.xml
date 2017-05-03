@@ -1,0 +1,28 @@
+<openerp>
+	<data>
+		<record id="inicial" model="ir.ui.view">
+			<field name="name">Interficie de calcul de IBAN</field>
+			<field name="model">calculiban</field>
+			<field name="arch" type="xml">
+				<form string="calculiban2">
+					<header>
+						<button string="Calcular IBAN" type="object" name="calculiban"/>
+					</header>
+					<group>
+						Numero de cuenta: 
+						<field name="numCuenta" class="oe_inline"/>
+						
+						<separator/>
+					</group>
+					<group>
+						IBAN:
+						<field name="IBAN" class="oe_inline"/>
+						<separator/>
+					</group>
+				</form>
+			</field>
+		</record>
+		<act_window id="calcula_iban" name="calc" res_model="calculiban2" view_mode="tree,form"/>
+		<menuitem id="menu_iban" name="calculiban2" action="calcula_iban" sequence="10"/>
+	</data>
+</openerp>
